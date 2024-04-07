@@ -1,0 +1,379 @@
+:root {
+    /* dark shades of primary color*/
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
+    /* primary/main color */
+    --clr-primary-5: hsl(205, 78%, 60%);
+    /* lighter shades of primary color */
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 50%, 1%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(0, 0%, 0%);
+    --clr-white: #fff;
+    --clr-gold: #c59d5f;
+
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: var(--clr-grey-10);
+    color: var(--clr-grey-1);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h4 {
+    font-size: 0.875rem;
+}
+p {
+    margin-bottom: 1.25rem;
+    color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 4rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    body {
+        font-size: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        line-height: 1;
+    }
+}
+/*  global classes */
+
+/* section */
+.section {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+@media screen and (min-width: 992px) {
+    .section {
+        width: 95vw;
+    }
+}
+
+/*
+=============== 
+Menu
+===============
+*/
+
+.menu {
+    padding: 5rem 0;
+}
+.title {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.underline {
+    width: 15rem;
+    height: 0.25rem;
+    background: var(--clr-gold);
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-container {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+}
+.filter-btn {
+    background: transparent;
+    border-color: transparent;
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin: 0 0.5rem;
+    letter-spacing: 1px;
+    padding: 0.375rem 0.75rem;
+    color: var(--clr-gold);
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: var(--radius);
+}
+.filter-btn:hover {
+    background: var(--clr-gold);
+    color: var(--clr-white);
+}
+.section-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    gap: 3rem 2rem;
+    justify-items: center;
+}
+.menu-item {
+    display: grid;
+    gap: 1rem 2rem;
+    max-width: 25rem;
+}
+.photo {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+    border: 0.25rem solid var(--clr-gold);
+    border-radius: var(--radius);
+    display: block;
+}
+.item-info header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px dotted var(--clr-grey-5);
+}
+.item-info h4 {
+    margin-bottom: 0.5rem;
+}
+.price {
+    color: var(--clr-gold);
+}
+.item-text {
+    margin-bottom: 0;
+    padding-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .menu-item {
+        grid-template-columns: 225px 1fr;
+        gap: 0 1.25rem;
+        max-width: 40rem;
+    }
+    .photo {
+        height: 175px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .section-center {
+        width: 95vw;
+        grid-template-columns: 1fr 1fr;
+    }
+    .photo {
+        height: 150px;
+    }
+}
+
+/* Basic Card */
+.basic-card {
+    width: 300px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: column;
+    height: 300px;
+
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.basic-card .card-content {
+    padding: 30px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.basic-card .card-title {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+}
+
+.basic-card .card-text {
+    line-height: 1.6;
+}
+
+.card-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines you want to display */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    height: 4.5em; /* Adjust based on line-height and font-size */
+}
+
+.basic-card .card-link {
+    padding: 25px;
+    width: -webkit-fill-available;
+}
+
+.basic-card .card-link div {
+    text-decoration: none;
+    position: relative;
+    align-items: bottom;
+    padding: 10px 0px;
+}
+
+.basic-card .card-link div:after {
+    top: 30px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    width: 0;
+
+    -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.basic-card .card-link div:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.basic-card-dark {
+    background-image: linear-gradient(to bottom right, #eba134, #f2ce99);
+}
+
+.basic-card-dark .card-title,
+.basic-card-dark .card-link a {
+    color: #000000;
+}
+
+.basic-card-dark .card-text {
+    color: #050505dd;
+}
+
+.basic-card-dark .card-link {
+    border-top: 1px solid #636363;
+}
+
+.basic-card-dark .card-link a:after {
+    background: #474747;
+}
+
+.card-link .checkout-btn {
+    cursor: pointer;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.card-link .checkout-btn:hover {
+    background-color: #000000; /* Example hover background color */
+    color: #eba134; /* Example text color change */
+    border-color: #eba134; /* Example hover border color */
+}
+
+.modelOpen {
+    position: fixed;
+    top: 0; /* Align the top edge of the modal with the viewport */
+    left: 0; /* Align the left edge of the modal with the viewport */
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    display: flex; /* Use flexbox for easy centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    z-index: 1000; /* Ensure it sits above other content */
+    overflow-y: auto; /* Enable scrolling for the modal content if it overflows */
+}
+
+.model-section {
+    width: 60%;
+    height: 70%;
+    margin: auto; /* This centers the section in both directions */
+    background: #fff; /* Example background, adjust as needed */
+    /* Additional styling for centering and appearance */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Adjust positioning as needed */
+    overflow-y: auto; /* Scroll if content overflows */
+    background-image: linear-gradient(to bottom right, #eba134, #8d6533bd);
+    color: black; /* Text color */
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    border: none;
+    background: transparent;
+    font-size: 24px; /* Adjust as needed */
+    cursor: pointer;
+}
+
+/* Optional: Style for hover effect */
+.close-btn:hover {
+    color: #ccc; /* Example hover color, adjust as needed */
+}
